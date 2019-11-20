@@ -1083,7 +1083,7 @@ kscrolldown(const Arg* a)
 	int n = a->i;
 
 	if (n < 0)
-		n = term.row + n;
+		n = term.row / 2 + n;
 
 	if (n > term.scr)
 		n = term.scr;
@@ -1101,7 +1101,7 @@ kscrollup(const Arg* a)
 	int n = a->i;
 
 	if (n < 0)
-		n = term.row + n;
+		n = term.row / 2 + n;
 
 	if (term.scr <= HISTSIZE-n) {
 		term.scr += n;
