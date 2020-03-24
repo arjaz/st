@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack Nerd Font:size=10";
+static char *font = "FiraCode:size=10";
 static int borderpx = 2;
 
 /*
@@ -128,7 +128,7 @@ static unsigned int defaultrcs = 256;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers
@@ -174,25 +174,25 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
-static Shortcut shortcuts[] = {
+static Shortcut shortcuts[]                                         = {
 	/* mask                 keysym          function        argument */
-	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
-	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
-	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
-	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
+	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i = 0} },
+	{ ControlMask,          XK_Print,       toggleprinter,  {.i = 0} },
+	{ ShiftMask,            XK_Print,       printscreen,    {.i = 0} },
+	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i = 0} },
+	{ TERMMOD,              XK_L,           zoom,           {.f = +1} },
+	{ TERMMOD,              XK_H,           zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Home,        zoomreset,      {.f = 0} },
+	{ TERMMOD,              XK_C,           clipcopy,       {.i = 0} },
+	{ TERMMOD,              XK_V,           clippaste,      {.i = 0} },
+	{ TERMMOD,              XK_Y,           selpaste,       {.i = 0} },
+	{ ShiftMask,            XK_Insert,      selpaste,       {.i = 0} },
+	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i = 0} },
+	{ TERMMOD,              XK_K,           kscrollup,      {.i = -1} },
+        { TERMMOD,              XK_J,           kscrolldown,    {.i = -1} },
+        { TERMMOD,              XK_Up,          zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
-    { TERMMOD,              XK_Return,      newterm,        {.i =  0} },
+        { TERMMOD,              XK_Return,      newterm,        {.i = 0} },
 };
 
 /*
